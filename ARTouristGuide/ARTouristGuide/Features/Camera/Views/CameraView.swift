@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct CameraView: View {
+  @StateObject private var arViewModel : ARViewModel = ARViewModel()
+
   var body: some View {
-    Text("Camera")
+    ARViewContainer(arViewModel: arViewModel)
+      .edgesIgnoringSafeArea(.all)
   }
 }

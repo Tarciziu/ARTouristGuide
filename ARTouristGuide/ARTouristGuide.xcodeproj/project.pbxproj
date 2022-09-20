@@ -25,6 +25,8 @@
 		D94859E128D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859DD28D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift */; };
 		D94859E228D9F3B60092EF23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859DE28D9F3B60092EF23 /* TabBarView.swift */; };
 		D94859E328D9F3B60092EF23 /* TabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859DF28D9F3B60092EF23 /* TabBarContainerView.swift */; };
+		D94859E728D9F5270092EF23 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859E628D9F5270092EF23 /* ARViewModel.swift */; };
+		D94859E928D9F5390092EF23 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859E828D9F5390092EF23 /* ARViewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		D94859DD28D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		D94859DE28D9F3B60092EF23 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D94859DF28D9F3B60092EF23 /* TabBarContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarContainerView.swift; sourceTree = "<group>"; };
+		D94859E628D9F5270092EF23 /* ARViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		D94859E828D9F5390092EF23 /* ARViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 		D94859CE28D9F18E0092EF23 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				D94859E428D9F5270092EF23 /* Model */,
+				D94859E528D9F5270092EF23 /* ViewModel */,
 				D94859D128D9F1D10092EF23 /* Views */,
 			);
 			path = Camera;
@@ -183,6 +189,7 @@
 		D94859D128D9F1D10092EF23 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D94859E828D9F5390092EF23 /* ARViewContainer.swift */,
 				D94859D228D9F1E50092EF23 /* CameraView.swift */,
 			);
 			path = Views;
@@ -221,6 +228,21 @@
 				D94859DF28D9F3B60092EF23 /* TabBarContainerView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D94859E428D9F5270092EF23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D94859E528D9F5270092EF23 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D94859E628D9F5270092EF23 /* ARViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,8 +323,10 @@
 				D94859BE28D9EBD40092EF23 /* ColorsCatalog.swift in Sources */,
 				D94859D528D9F2120092EF23 /* MapView.swift in Sources */,
 				D94859A628D9E6900092EF23 /* LandingView.swift in Sources */,
+				D94859E728D9F5270092EF23 /* ARViewModel.swift in Sources */,
 				D94859D828D9F2290092EF23 /* VisitedView.swift in Sources */,
 				D94859CA28D9ED9D0092EF23 /* FontsCatalog.swift in Sources */,
+				D94859E928D9F5390092EF23 /* ARViewContainer.swift in Sources */,
 				D94859D328D9F1E50092EF23 /* CameraView.swift in Sources */,
 				D94859E128D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift in Sources */,
 				D94859E028D9F3B60092EF23 /* TabBarItem.swift in Sources */,
@@ -365,6 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Acces";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -419,6 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera Acces";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

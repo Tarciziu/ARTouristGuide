@@ -21,6 +21,10 @@
 		D94859D328D9F1E50092EF23 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859D228D9F1E50092EF23 /* CameraView.swift */; };
 		D94859D528D9F2120092EF23 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859D428D9F2120092EF23 /* MapView.swift */; };
 		D94859D828D9F2290092EF23 /* VisitedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859D728D9F2290092EF23 /* VisitedView.swift */; };
+		D94859E028D9F3B60092EF23 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859DC28D9F3B60092EF23 /* TabBarItem.swift */; };
+		D94859E128D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859DD28D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift */; };
+		D94859E228D9F3B60092EF23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859DE28D9F3B60092EF23 /* TabBarView.swift */; };
+		D94859E328D9F3B60092EF23 /* TabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859DF28D9F3B60092EF23 /* TabBarContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		D94859D228D9F1E50092EF23 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		D94859D428D9F2120092EF23 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D94859D728D9F2290092EF23 /* VisitedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedView.swift; sourceTree = "<group>"; };
+		D94859DC28D9F3B60092EF23 /* TabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		D94859DD28D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		D94859DE28D9F3B60092EF23 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		D94859DF28D9F3B60092EF23 /* TabBarContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 				D94859CB28D9EFD60092EF23 /* Landing */,
 				D94859CD28D9F00B0092EF23 /* Common */,
 				D94859CC28D9F0030092EF23 /* Features */,
+				D94859DA28D9F3920092EF23 /* ContainerViews */,
 				D94859BB28D9EBC60092EF23 /* Theme */,
 				D94859B428D9EB790092EF23 /* Resources */,
 				D94859A928D9E69B0092EF23 /* Preview Content */,
@@ -195,6 +204,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D94859DA28D9F3920092EF23 /* ContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				D94859DB28D9F3B60092EF23 /* TabBar */,
+			);
+			path = ContainerViews;
+			sourceTree = "<group>";
+		};
+		D94859DB28D9F3B60092EF23 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D94859DC28D9F3B60092EF23 /* TabBarItem.swift */,
+				D94859DD28D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift */,
+				D94859DE28D9F3B60092EF23 /* TabBarView.swift */,
+				D94859DF28D9F3B60092EF23 /* TabBarContainerView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +304,10 @@
 				D94859D828D9F2290092EF23 /* VisitedView.swift in Sources */,
 				D94859CA28D9ED9D0092EF23 /* FontsCatalog.swift in Sources */,
 				D94859D328D9F1E50092EF23 /* CameraView.swift in Sources */,
+				D94859E128D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift in Sources */,
+				D94859E028D9F3B60092EF23 /* TabBarItem.swift in Sources */,
+				D94859E328D9F3B60092EF23 /* TabBarContainerView.swift in Sources */,
+				D94859E228D9F3B60092EF23 /* TabBarView.swift in Sources */,
 				D94859A428D9E6900092EF23 /* ARTouristGuideApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

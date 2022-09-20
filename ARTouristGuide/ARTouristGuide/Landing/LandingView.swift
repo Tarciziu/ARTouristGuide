@@ -8,23 +8,16 @@
 import SwiftUI
 
 struct LandingView: View {
-    var body: some View {
-      TabView {
-        Text("First")
-          .tabItem {
-            Image(systemName: "square")
-          }
-
-        Text("Second")
-          .tabItem {
-            Image(systemName: "circle")
-          }
-      }
+  @StateObject var tabBarConfiguration = TabBarConfiguration()
+  var body: some View {
+    TabBarContainerView {
+      MapView()
+        .tabBarItem(tab: .primary, selectedTab: $tabBarConfiguration.selectedTab)
+      CameraView()
+        .tabBarItem(tab: .secondary, selectedTab: $tabBarConfiguration.selectedTab)
+      VisitedView()
+        .tabBarItem(tab: .tertiary, selectedTab: $tabBarConfiguration.selectedTab)
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        LandingView()
-    }
+    .environmentObject(tabBarConfiguration)
+  }
 }

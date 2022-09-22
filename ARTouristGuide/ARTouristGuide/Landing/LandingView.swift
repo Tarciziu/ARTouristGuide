@@ -11,7 +11,7 @@ struct LandingView: View {
   @StateObject var tabBarConfiguration = TabBarConfiguration()
   var body: some View {
     TabBarContainerView {
-      MapView()
+      LocationsView()
         .tabBarItem(tab: .primary, selectedTab: $tabBarConfiguration.selectedTab)
       CameraView()
         .tabBarItem(tab: .secondary, selectedTab: $tabBarConfiguration.selectedTab)

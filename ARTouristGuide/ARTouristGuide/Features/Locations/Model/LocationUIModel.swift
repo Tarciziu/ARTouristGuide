@@ -15,5 +15,13 @@ struct LocationUIModel: Identifiable {
   let coordinates: CLLocationCoordinate2D
   let description: String
   let images: [ImageSource]
-  let learnMoreLink: [URL]
+  let learnMoreLink: URL
+}
+
+extension LocationUIModel: Equatable {
+  static func == (lhs: LocationUIModel, rhs: LocationUIModel) -> Bool {
+    lhs.id == rhs.id
+  }
+
+
 }

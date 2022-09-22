@@ -28,8 +28,20 @@ class LocationsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
 
   // MARK: - Private Properties
 
+  private enum Constants {
+    static let selectedLocationSpan = 0.001
+    static let defaultSpan = 0.1
+  }
+
   private let locationManager = CLLocationManager()
-  private let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+  private let mapSpan = MKCoordinateSpan(
+    latitudeDelta: Constants.defaultSpan,
+    longitudeDelta: Constants.defaultSpan
+  )
+  private let selectedLocationSpan = MKCoordinateSpan(
+    latitudeDelta: Constants.selectedLocationSpan,
+    longitudeDelta: Constants.selectedLocationSpan
+  )
 
   // MARK: - Init
 
@@ -48,14 +60,26 @@ class LocationsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         description: "The Matthias Corvinus Monument is a monument in Cluj-Napoca, Romania. This classified historic monument, conceived by Janos Fadrusz and opened in 1902, represents Matthias Corvinus.",
         images: [
           ImageSource.url(URL(string: "https://en.wikipedia.org/wiki/Matthias_Corvinus_Monument#/media/File:Oameni_si_lalele_-_Cluj-Napoca,_Piata_Unirii._Statuia_lui_Matei_Corvin.jpg")!)
-
         ],
-        learnMoreLink: URL(string: "https://en.wikipedia.org/wiki/Matthias_Corvinus_Monument")!)
+        learnMoreLink: URL(string: "https://en.wikipedia.org/wiki/Matthias_Corvinus_Monument")!),
+      LocationUIModel(
+        name: "Botanical Garden",
+        cityName: "Cluj-Napoca",
+        coordinates: CLLocationCoordinate2D(latitude: 46.762671, longitude: 23.588542),
+        description: "The Cluj-Napoca Botanical Garden, officially Alexandru Borza Cluj-Napoca University Botanic Garden, is a botanical garden located in the south part of Cluj-Napoca, Romania. It was founded in 1872 by Brassai Samuel. Its director in 1905 was Aladár Richter, than Páter Béla, Győrffy István and than overtaken 1920 by the local university, and by Alexandru Borza.",
+        images: [
+          ImageSource.url(URL(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gazetanord-vest.ro%2F2019%2F06%2Fgradina-botanica-din-cluj-napoca-oaza-de-liniste-si-relaxare%2F&psig=AOvVaw2YlmNJWXyMbfKvg8FmWlUr&ust=1663924387558000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKi808OHqPoCFQAAAAAdAAAAABAD")!),
+          ImageSource.url(URL(string: "https://en.wikipedia.org/wiki/Cluj-Napoca_Botanical_Garden#/media/File:Botanic_Garden_Cluj-Napoca_4.jpg")!)
+        ],
+        learnMoreLink: URL(string: "https://en.wikipedia.org/wiki/Cluj-Napoca_Botanical_Garden")!)
     ]
   }
 
   private func updateMapRegion(location: LocationUIModel) {
-    userLocation = MKCoordinateRegion(center: location.coordinates, span: mapSpan)
+    userLocation = MKCoordinateRegion(
+      center: location.coordinates,
+      span: selectedLocationSpan
+    )
   }
 
   func selectLocation(_ location: LocationUIModel) {

@@ -13,4 +13,5 @@ enum SpacingCatalog {
   static let spacingM = 8.0
   static let spacingL = 12.0
   static let spacingXL = 16.0
+  static let spacingXXL = 36.0
 }

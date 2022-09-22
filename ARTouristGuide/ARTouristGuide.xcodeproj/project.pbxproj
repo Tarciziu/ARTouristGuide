@@ -32,6 +32,8 @@
 		D94859F128D9FA2E0092EF23 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94859F028D9FA2E0092EF23 /* LocationsViewModel.swift */; };
 		D9671B0A28DC482800FFA653 /* SpacingCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B0928DC482800FFA653 /* SpacingCatalog.swift */; };
 		D9671B0C28DC4B3600FFA653 /* CornerRadiusCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B0B28DC4B3600FFA653 /* CornerRadiusCatalog.swift */; };
+		D9671B1028DC5F6200FFA653 /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B0F28DC5F6200FFA653 /* MapPinView.swift */; };
+		D9671B1628DC7CCB00FFA653 /* View+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B1528DC7CCB00FFA653 /* View+Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		D94859F028D9FA2E0092EF23 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 		D9671B0928DC482800FFA653 /* SpacingCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingCatalog.swift; sourceTree = "<group>"; };
 		D9671B0B28DC4B3600FFA653 /* CornerRadiusCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusCatalog.swift; sourceTree = "<group>"; };
+		D9671B0F28DC5F6200FFA653 /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
+		D9671B1528DC7CCB00FFA653 /* View+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Size.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				D94859D428D9F2120092EF23 /* LocationsView.swift */,
+				D9671B0F28DC5F6200FFA653 /* MapPinView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 		D94859F228DA031E0092EF23 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D9671B1528DC7CCB00FFA653 /* View+Size.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				D9671B0C28DC4B3600FFA653 /* CornerRadiusCatalog.swift in Sources */,
 				D94859D828D9F2290092EF23 /* VisitedView.swift in Sources */,
 				D94859CA28D9ED9D0092EF23 /* FontsCatalog.swift in Sources */,
+				D9671B1628DC7CCB00FFA653 /* View+Size.swift in Sources */,
 				D94859EC28D9F92A0092EF23 /* LocationUIModel.swift in Sources */,
 				D94859E928D9F5390092EF23 /* ARViewContainer.swift in Sources */,
 				D94859D328D9F1E50092EF23 /* CameraView.swift in Sources */,
@@ -375,6 +382,7 @@
 				D94859F128D9FA2E0092EF23 /* LocationsViewModel.swift in Sources */,
 				D94859E028D9F3B60092EF23 /* TabBarItem.swift in Sources */,
 				D94859E328D9F3B60092EF23 /* TabBarContainerView.swift in Sources */,
+				D9671B1028DC5F6200FFA653 /* MapPinView.swift in Sources */,
 				D94859E228D9F3B60092EF23 /* TabBarView.swift in Sources */,
 				D94859A428D9E6900092EF23 /* ARTouristGuideApp.swift in Sources */,
 			);

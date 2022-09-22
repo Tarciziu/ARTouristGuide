@@ -9,42 +9,68 @@ import SwiftUI
 import MapKit
 
 struct LocationsView: View {
+  // MARK: - State Properties
+
   @StateObject private var viewModel = LocationsViewModel()
   @State private var isPresentingLocations = false
+  @State private var scrollViewChildSize: CGSize = .zero
 
   // MARK: - Body
 
   var body: some View {
-    ZStack {
-      Map(coordinateRegion: $viewModel.userLocation)
+    ZStack(alignment: .top) {
+      mapLayer
         .ignoresSafeArea()
-      locationsList
+      locationHeader
+        .frame(maxHeight: UIScreen.main.bounds.height / 2, alignment: .top)
     }
   }
 
-  // MARK: - ViewBuilders
+  // MARK: - View Builders
 
-  private var locationsList: some View {
-    VStack {
-      VStack {
+  private var mapLayer: some View {
+    Map(coordinateRegion: $viewModel.userLocation,
+        annotationItems:viewModel.locations) { location in
+      MapAnnotation(coordinate: location.coordinates) {
+        MapPinView()
+          .shadow(radius: 10)
+          .onTapGesture {
+            viewModel.selectedLocation = location
+          }
+      }
+    }
+  }
+
+  private var locationHeader: some View {
+    VStack(spacing: 0) {
+      VStack(spacing: 0) {
         makeLocation(location: viewModel.selectedLocation)
         if isPresentingLocations {
-          ForEach(viewModel.locations) { location in
-            if location != viewModel.selectedLocation {
-              makeLocationItem(location: location)
-                .onTapGesture {
-                  isPresentingLocations = false
-                  viewModel.selectedLocation = location
-                }
-            }
-          }
+          locationsList
         }
       }
       .background(ColorsCatalog.listItemBackground)
       .cornerRadius(CornerRadiusCatalog.radiusS)
-      .padding(SpacingCatalog.spacingXL)
-      Spacer()
+      .padding(.horizontal, SpacingCatalog.spacingXL)
     }
+  }
+
+  private var locationsList: some View {
+    ScrollView(showsIndicators: false) {
+      ForEach(viewModel.locations) { location in
+        if location != viewModel.selectedLocation {
+          makeLocationItem(location: location)
+            .onTapGesture {
+              isPresentingLocations = false
+              viewModel.selectedLocation = location
+            }
+        }
+      }
+      .readViewSize { size in
+        scrollViewChildSize = size
+      }
+    }
+    .frame(maxHeight: scrollViewChildSize.height)
   }
 
   private func makeLocation(location: LocationUIModel?) -> some View {
@@ -61,24 +87,29 @@ struct LocationsView: View {
         arrow
       }
     }
-    .contentShape(Rectangle())
     .onTapGesture {
       isPresentingLocations.toggle()
     }
   }
 
   private func makeLocationItem(location: LocationUIModel) -> some View {
-    Text(location.name)
-      .foregroundColor(ColorsCatalog.primaryText)
-      .font(FontsCatalog.header5)
-      .padding(.vertical, SpacingCatalog.spacingM)
+    HStack {
+      Text(location.name)
+        .foregroundColor(ColorsCatalog.primaryText)
+        .font(FontsCatalog.header5)
+        .contentShape(Rectangle())
+        .padding(.vertical, SpacingCatalog.spacingL)
+    }
+    .frame(maxWidth: .infinity)
   }
 
   private var locationItemPlaceholder: some View {
     Text(viewModel.locationPlaceholder)
       .foregroundColor(ColorsCatalog.primaryText)
       .font(FontsCatalog.header5)
-      .padding(.vertical, SpacingCatalog.spacingM)
+      .contentShape(Rectangle())
+      .padding(.vertical, SpacingCatalog.spacingL)
+      .frame(maxWidth: .infinity)
   }
 
   private var arrow: some View {
@@ -92,12 +123,12 @@ struct LocationsView: View {
   }
 
   private var selectedArrow: some View {
-      Image(systemName: "arrow.down")
-        .padding(.horizontal, SpacingCatalog.spacingM)
+    Image(systemName: "arrow.down")
+      .padding(.horizontal, SpacingCatalog.spacingM)
   }
 
   private var unselectedArrow: some View {
-      Image(systemName: "arrow.forward")
-        .padding(.horizontal, SpacingCatalog.spacingM)
+    Image(systemName: "arrow.forward")
+      .padding(.horizontal, SpacingCatalog.spacingM)
   }
 }

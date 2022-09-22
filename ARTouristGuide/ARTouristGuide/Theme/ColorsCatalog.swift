@@ -18,4 +18,5 @@ enum ColorsCatalog {
   static let secondaryText = Color("SecondaryText")
   static let primaryButton = Color("PrimaryButton")
   static let secondaryButton = Color("SecondaryButton")
+  static let mapPinColor = Color("MapPin")
 }

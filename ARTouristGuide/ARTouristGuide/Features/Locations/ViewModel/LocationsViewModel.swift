@@ -13,6 +13,7 @@ class LocationsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
 
   @Published var locations: [LocationUIModel] = []
   @Published var locationStatus: CLAuthorizationStatus?
+  @Published var selectedLocationIndex = -1
   @Published var selectedLocation: LocationUIModel? {
     didSet {
       if let selectedLocation = selectedLocation {
@@ -58,8 +59,7 @@ class LocationsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         cityName: "Cluj-Napoca",
         coordinates: CLLocationCoordinate2D(latitude: 46.76955, longitude: 23.58984),
         description: "The Matthias Corvinus Monument is a monument in Cluj-Napoca, Romania. This classified historic monument, conceived by Janos Fadrusz and opened in 1902, represents Matthias Corvinus.",
-        images: [
-          ImageSource.url(URL(string: "https://en.wikipedia.org/wiki/Matthias_Corvinus_Monument#/media/File:Oameni_si_lalele_-_Cluj-Napoca,_Piata_Unirii._Statuia_lui_Matei_Corvin.jpg")!)
+        images: [URL(string: "https://upload.wikimedia.org/wikipedia/commons/9/95/Statuia_lui_Matei_Corvin_la_apus.jpg")!
         ],
         learnMoreLink: URL(string: "https://en.wikipedia.org/wiki/Matthias_Corvinus_Monument")!),
       LocationUIModel(
@@ -68,8 +68,8 @@ class LocationsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         coordinates: CLLocationCoordinate2D(latitude: 46.762671, longitude: 23.588542),
         description: "The Cluj-Napoca Botanical Garden, officially Alexandru Borza Cluj-Napoca University Botanic Garden, is a botanical garden located in the south part of Cluj-Napoca, Romania. It was founded in 1872 by Brassai Samuel. Its director in 1905 was Aladár Richter, than Páter Béla, Győrffy István and than overtaken 1920 by the local university, and by Alexandru Borza.",
         images: [
-          ImageSource.url(URL(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gazetanord-vest.ro%2F2019%2F06%2Fgradina-botanica-din-cluj-napoca-oaza-de-liniste-si-relaxare%2F&psig=AOvVaw2YlmNJWXyMbfKvg8FmWlUr&ust=1663924387558000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKi808OHqPoCFQAAAAAdAAAAABAD")!),
-          ImageSource.url(URL(string: "https://en.wikipedia.org/wiki/Cluj-Napoca_Botanical_Garden#/media/File:Botanic_Garden_Cluj-Napoca_4.jpg")!)
+          URL(string: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Botanic_Garden_Cluj-Napoca_4.jpg")!,
+          URL(string: "https://cdn.knd.ro/media/521/2863/554/20015389/1/cluj.jpg?width=900&height=666&quality=80")!
         ],
         learnMoreLink: URL(string: "https://en.wikipedia.org/wiki/Cluj-Napoca_Botanical_Garden")!)
     ]
@@ -80,10 +80,23 @@ class LocationsViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
       center: location.coordinates,
       span: selectedLocationSpan
     )
+    selectedLocationIndex = locations.firstIndex(where: { place in
+      place == location
+    }) ?? -1
   }
 
   func selectLocation(_ location: LocationUIModel) {
     selectedLocation = location
+  }
+
+  func selectNextLocation() {
+    selectedLocationIndex = locations.count - 1 > selectedLocationIndex ? selectedLocationIndex + 1 : 0
+    selectedLocation = locations[selectedLocationIndex]
+  }
+
+  func getLocationString() -> String {
+    let url = "maps://?daddr=\(selectedLocation?.coordinates.latitude ?? 0),\(selectedLocation?.coordinates.longitude ?? 0)"
+    return url
   }
 
   var statusString: String {

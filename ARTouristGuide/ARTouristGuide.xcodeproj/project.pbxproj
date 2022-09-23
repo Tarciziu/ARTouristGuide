@@ -34,6 +34,7 @@
 		D9671B0C28DC4B3600FFA653 /* CornerRadiusCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B0B28DC4B3600FFA653 /* CornerRadiusCatalog.swift */; };
 		D9671B1028DC5F6200FFA653 /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B0F28DC5F6200FFA653 /* MapPinView.swift */; };
 		D9671B1628DC7CCB00FFA653 /* View+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B1528DC7CCB00FFA653 /* View+Size.swift */; };
+		D9671B1828DC824E00FFA653 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B1728DC824E00FFA653 /* LocationPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		D9671B0B28DC4B3600FFA653 /* CornerRadiusCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusCatalog.swift; sourceTree = "<group>"; };
 		D9671B0F28DC5F6200FFA653 /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
 		D9671B1528DC7CCB00FFA653 /* View+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Size.swift"; sourceTree = "<group>"; };
+		D9671B1728DC824E00FFA653 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			children = (
 				D94859D428D9F2120092EF23 /* LocationsView.swift */,
 				D9671B0F28DC5F6200FFA653 /* MapPinView.swift */,
+				D9671B1728DC824E00FFA653 /* LocationPreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D94859E128D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift in Sources */,
 				D94859F128D9FA2E0092EF23 /* LocationsViewModel.swift in Sources */,
 				D94859E028D9F3B60092EF23 /* TabBarItem.swift in Sources */,
+				D9671B1828DC824E00FFA653 /* LocationPreviewView.swift in Sources */,
 				D94859E328D9F3B60092EF23 /* TabBarContainerView.swift in Sources */,
 				D9671B1028DC5F6200FFA653 /* MapPinView.swift in Sources */,
 				D94859E228D9F3B60092EF23 /* TabBarView.swift in Sources */,

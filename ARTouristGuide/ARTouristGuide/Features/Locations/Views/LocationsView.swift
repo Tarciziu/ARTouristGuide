@@ -15,6 +15,11 @@ struct LocationsView: View {
   @State private var isPresentingLocations = false
   @State private var scrollViewChildSize: CGSize = .zero
 
+  // MARK: - Private Properties
+
+  @Namespace private var namespace
+  @Environment(\.openURL) private var openURL
+
   // MARK: - Body
 
   var body: some View {
@@ -23,6 +28,9 @@ struct LocationsView: View {
         .ignoresSafeArea()
       locationHeader
         .frame(maxHeight: UIScreen.main.bounds.height / 2, alignment: .top)
+      locationPreview
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .padding(SpacingCatalog.spacingL)
     }
   }
 
@@ -39,6 +47,9 @@ struct LocationsView: View {
           }
       }
     }
+        .matchedGeometryEffect(id: String(describing: self), in: namespace)
+        .animation(.default, value: viewModel.selectedLocation)
+        .animation(.default, value: isPresentingLocations)
   }
 
   private var locationHeader: some View {
@@ -71,6 +82,28 @@ struct LocationsView: View {
       }
     }
     .frame(maxHeight: scrollViewChildSize.height)
+  }
+
+  private var locationPreview: some View {
+    Group {
+      Group {
+        if let selectedLocation = viewModel.selectedLocation {
+          LocationPreviewView(
+            location: selectedLocation,
+            topButtonAction: {
+              if let validURL = URL(string: viewModel.getLocationString()) {
+                openURL(validURL)
+              }
+            },
+            bottomButtonAction: viewModel.selectNextLocation
+          )
+        }
+        Spacer()
+      }
+      .frame(maxHeight: UIScreen.main.bounds.height / 2)
+    }
+    .frame(maxHeight: UIScreen.main.bounds.height / 2, alignment: .bottom)
+    .shadow(radius: 10)
   }
 
   private func makeLocation(location: LocationUIModel?) -> some View {

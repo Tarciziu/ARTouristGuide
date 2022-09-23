@@ -14,7 +14,7 @@ struct LocationUIModel: Identifiable {
   let cityName: String
   let coordinates: CLLocationCoordinate2D
   let description: String
-  let images: [ImageSource]
+  let images: [URL]
   let learnMoreLink: URL
 }
 

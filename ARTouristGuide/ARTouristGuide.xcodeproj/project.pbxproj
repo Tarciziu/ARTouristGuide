@@ -35,6 +35,9 @@
 		D9671B1028DC5F6200FFA653 /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B0F28DC5F6200FFA653 /* MapPinView.swift */; };
 		D9671B1628DC7CCB00FFA653 /* View+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B1528DC7CCB00FFA653 /* View+Size.swift */; };
 		D9671B1828DC824E00FFA653 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9671B1728DC824E00FFA653 /* LocationPreviewView.swift */; };
+		D9F433AE28DDA28000DFB57B /* ShadowsCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F433AD28DDA28000DFB57B /* ShadowsCatalog.swift */; };
+		D9F433B128DDA2E600DFB57B /* ShadowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F433B028DDA2E600DFB57B /* ShadowStyle.swift */; };
+		D9F433B428DDA35800DFB57B /* View+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F433B328DDA35800DFB57B /* View+Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		D9671B0F28DC5F6200FFA653 /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
 		D9671B1528DC7CCB00FFA653 /* View+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Size.swift"; sourceTree = "<group>"; };
 		D9671B1728DC824E00FFA653 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
+		D9F433AD28DDA28000DFB57B /* ShadowsCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowsCatalog.swift; sourceTree = "<group>"; };
+		D9F433B028DDA2E600DFB57B /* ShadowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowStyle.swift; sourceTree = "<group>"; };
+		D9F433B328DDA35800DFB57B /* View+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 				D94859CC28D9F0030092EF23 /* Features */,
 				D94859DA28D9F3920092EF23 /* ContainerViews */,
 				D94859F228DA031E0092EF23 /* Utilities */,
+				D9F433AF28DDA2D100DFB57B /* Extensions */,
 				D94859BB28D9EBC60092EF23 /* Theme */,
 				D94859B428D9EB790092EF23 /* Resources */,
 				D94859A928D9E69B0092EF23 /* Preview Content */,
@@ -140,6 +147,7 @@
 				D94859C928D9ED9D0092EF23 /* FontsCatalog.swift */,
 				D9671B0928DC482800FFA653 /* SpacingCatalog.swift */,
 				D9671B0B28DC4B3600FFA653 /* CornerRadiusCatalog.swift */,
+				D9F433AD28DDA28000DFB57B /* ShadowsCatalog.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -288,9 +296,18 @@
 		D94859F228DA031E0092EF23 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D9671B1528DC7CCB00FFA653 /* View+Size.swift */,
+				D9F433B028DDA2E600DFB57B /* ShadowStyle.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D9F433AF28DDA2D100DFB57B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9671B1528DC7CCB00FFA653 /* View+Size.swift */,
+				D9F433B328DDA35800DFB57B /* View+Theme.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,15 +394,18 @@
 				D9671B0C28DC4B3600FFA653 /* CornerRadiusCatalog.swift in Sources */,
 				D94859D828D9F2290092EF23 /* VisitedView.swift in Sources */,
 				D94859CA28D9ED9D0092EF23 /* FontsCatalog.swift in Sources */,
+				D9F433AE28DDA28000DFB57B /* ShadowsCatalog.swift in Sources */,
 				D9671B1628DC7CCB00FFA653 /* View+Size.swift in Sources */,
 				D94859EC28D9F92A0092EF23 /* LocationUIModel.swift in Sources */,
 				D94859E928D9F5390092EF23 /* ARViewContainer.swift in Sources */,
 				D94859D328D9F1E50092EF23 /* CameraView.swift in Sources */,
 				D94859E128D9F3B60092EF23 /* TabBarItemsPreferenceKey.swift in Sources */,
 				D94859F128D9FA2E0092EF23 /* LocationsViewModel.swift in Sources */,
+				D9F433B128DDA2E600DFB57B /* ShadowStyle.swift in Sources */,
 				D94859E028D9F3B60092EF23 /* TabBarItem.swift in Sources */,
 				D9671B1828DC824E00FFA653 /* LocationPreviewView.swift in Sources */,
 				D94859E328D9F3B60092EF23 /* TabBarContainerView.swift in Sources */,
+				D9F433B428DDA35800DFB57B /* View+Theme.swift in Sources */,
 				D9671B1028DC5F6200FFA653 /* MapPinView.swift in Sources */,
 				D94859E228D9F3B60092EF23 /* TabBarView.swift in Sources */,
 				D94859A428D9E6900092EF23 /* ARTouristGuideApp.swift in Sources */,

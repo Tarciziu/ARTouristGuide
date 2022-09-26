@@ -44,6 +44,7 @@ struct LocationPreviewView: View {
       RoundedRectangle(cornerRadius: CornerRadiusCatalog.radiusM)
         .fill(.thinMaterial)
         .offset(y: Constants.imageHeight / 3)
+        .shadow(with: ShadowsCatalog.shadowXL)
     )
   }
 
@@ -65,6 +66,7 @@ struct LocationPreviewView: View {
     .padding(SpacingCatalog.spacingS)
     .background(ColorsCatalog.listItemBackground)
     .cornerRadius(CornerRadiusCatalog.radiusL)
+    .shadow(with: ShadowsCatalog.shadowS)
   }
 
   private var title: some View {
@@ -91,8 +93,11 @@ struct LocationPreviewView: View {
           .foregroundColor(ColorsCatalog.secondaryText)
           .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
       }
-      .buttonStyle(.borderedProminent)
-      .tint(ColorsCatalog.primaryButton)
+      .background(
+        RoundedRectangle(cornerRadius: CornerRadiusCatalog.radiusM)
+          .fill(ColorsCatalog.primaryButton)
+          .shadow(with: ShadowsCatalog.shadowS)
+      )
 
       Button {
         bottomButtonAction()
@@ -102,8 +107,11 @@ struct LocationPreviewView: View {
           .foregroundColor(ColorsCatalog.primaryText)
           .frame(width: Constants.buttonWidth, height: Constants.buttonHeight)
       }
-      .buttonStyle(.bordered)
-      .tint(ColorsCatalog.secondaryButton)
+      .background(
+        RoundedRectangle(cornerRadius: CornerRadiusCatalog.radiusM)
+          .fill(ColorsCatalog.secondaryButton)
+          .shadow(with: ShadowsCatalog.shadowS)
+      )
     }
   }
 }

@@ -64,6 +64,7 @@ struct LocationsView: View {
       .cornerRadius(CornerRadiusCatalog.radiusS)
       .padding(.horizontal, SpacingCatalog.spacingXL)
     }
+    .shadow(with: ShadowsCatalog.shadowM)
   }
 
   private var locationsList: some View {
@@ -103,7 +104,6 @@ struct LocationsView: View {
       .frame(maxHeight: UIScreen.main.bounds.height / 2)
     }
     .frame(maxHeight: UIScreen.main.bounds.height / 2, alignment: .bottom)
-    .shadow(radius: 10)
   }
 
   private func makeLocation(location: LocationUIModel?) -> some View {

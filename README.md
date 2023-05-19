@@ -34,11 +34,11 @@ In the code snippet displayed above, we can see that we set the current coordina
 # UI Components
 Using the MapAnnotation’s view builder parameter, we can place an item on the map based on the coordinates passed. This will add our MapPinView to the in application map. The MapPinView is a small circle with an arrow at its bottom which points to the coordinates that were passed to the annotation view.
 
-<img width="100" alt="Screenshot 2023-05-19 at 09 51 54" src="https://github.com/Tarciziu/ARTouristGuide/assets/50876642/5e48b6a2-6c5a-43e0-ae78-30791066be37">
+<img width="100" src="https://github.com/Tarciziu/ARTouristGuide/blob/main/Screenshot%202023-05-19%20at%2009.51.54.png">
 
 Other than the MapPinView, there is a LocationPrevieView which is displayed on the bottom of the screen and it looks like the one with the Bánffy Palace in the following image.
 
-<img width="250" alt="Screenshot 2023-05-19 at 09 57 28" src="https://github.com/Tarciziu/ARTouristGuide/assets/50876642/96793a79-80b6-4a83-a5a3-54af1a0950e6">
+<img width="250" src="https://github.com/Tarciziu/ARTouristGuide/blob/main/Screenshot%202023-05-19%20at%2009.57.28.png">
 
 # Location (CLLocationManager)
 To get the current location, we need to implement the CLLocationManagerDelegate protocol with its locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) and locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) methods. The implementation of these methods is presented in the following code snippet:
@@ -61,9 +61,9 @@ The first method is invoked when the authorization status changes for this appli
 
 # Screenshots from the app
 
-<img width="250" src="https://github.com/Tarciziu/ARTouristGuide/assets/50876642/0b1e865e-3913-4af0-baf5-056e3b322c1c">
+<img width="250" src="https://github.com/Tarciziu/ARTouristGuide/blob/main/20DBDAA7-869A-4B12-9F68-260B9A52CBF2.png">
 
-<img width="250" src="https://github.com/Tarciziu/ARTouristGuide/assets/50876642/4ac4eb8b-e6c8-4e95-a6cf-ecc728bfb235">
+<img width="250" src="https://github.com/Tarciziu/ARTouristGuide/blob/main/F86E6171-7AB8-4715-8147-45A0F89D19EA.png">
 
 
 

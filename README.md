@@ -11,7 +11,7 @@ Respond to user interactions with well known points of interest, geographical fe
 Provide text completion to make it easy for users to search for a destination or point of interest.
 To showcase the usability of this framework, I created a new project using Xcode as IDE. I also used the MVVM pattern to separate the UI and the logic components. The following diagram shows how this pattern is applied in this proof of concept application.
 
-<img width="706" alt="Screenshot 2023-05-19 at 16 44 02" src="https://github.com/Tarciziu/ARTouristGuide/assets/50876642/3148b81e-d17e-4b97-8376-480182195358">
+<img width="706" src="https://github.com/Tarciziu/ARTouristGuide/blob/main/Screenshot%202023-05-19%20at%2016.44.02.png">
 
 # Usage
 To use MapKit, I have to import the framework in a swift file and place the Map struct inside a SwiftUI view as in the following example:
